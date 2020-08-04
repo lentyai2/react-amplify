@@ -1,0 +1,40 @@
+{
+	"auth": {
+		"reactamplifytut927a830d": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	},
+	"api": {
+		"reactamplifytut": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"defaultAuthentication": {
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"apiKeyExpirationDays": 11,
+							"description": "test"
+						}
+					},
+					"additionalAuthenticationProviders": []
+				}
+			}
+		}
+	},
+	"analytics": {
+		"reactamplifytut": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"storage": {
+		"reactamplifytut": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
